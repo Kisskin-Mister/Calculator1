@@ -6,7 +6,7 @@ public class AnotherCalculator {
     public static String func = "-"; // функция: - + * /
 
     static convertation conv = new convertation();
-    static convertation.rtn fn = new convertation.rtn();
+
 
     public static void main(String[] args) {
         int digit1 = conv.finalConv(value1);
