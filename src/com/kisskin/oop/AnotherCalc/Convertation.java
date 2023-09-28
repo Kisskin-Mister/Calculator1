@@ -1,6 +1,6 @@
 package com.kisskin.oop.AnotherCalc;
 
-public class convertation {
+public class Convertation {
     public int arabNumber(String xx) {
         switch (xx) {
             case "1":
@@ -58,7 +58,7 @@ public class convertation {
 
     static boolean isNumber(String s) {
         for (int i = 0; i < s.length(); i++)
-            if (Character.isDigit(s.charAt(i)) == false)
+            if (!Character.isDigit(s.charAt(i)))
                 return false;
 
         return true;
@@ -75,9 +75,11 @@ public class convertation {
         return result;
     }
 
-    public int returnFinal(int x, String a, String b){
+    public int returnConvertedValue(int x, String a, String b){
         if((isNumber(a) == isNumber(b))){
             return x;
+        }else if (AnotherCalculator.func == "/" && AnotherCalculator.value2 == "0"){
+            throw new IllegalArgumentException("БАЛЯТЬ НЕ ДЕЛИ НА НОЛЬ");
         }else{
             throw new IllegalArgumentException("БАЛЯТЬ НЕПРАВИЛЬНО ВВЕЛ ЧИСЛА(один регистр, от 1 до 10)");
         }
