@@ -26,7 +26,7 @@ public class Convertation {
             case "10":
                 return 10;
             default:
-                throw new IllegalArgumentException("БАЛЯТЬ НЕПРАВИЛЬНО ВВЕЛ ЧИСЛА (от 1 до 10)");
+                return 0;
         }
     }
 
@@ -53,7 +53,7 @@ public class Convertation {
             case "X":
                 return 10;
             default:
-                throw new IllegalArgumentException("БАЛЯТЬ НЕПРАВИЛЬНО ВВЕЛ ЧИСЛА (от I до X)");
+                return 0;
         }
     }
 

@@ -1,40 +1,35 @@
+
 package com.kisskin.oop.AnotherCalc;
 
 import java.util.Scanner;
 
+import static com.kisskin.oop.AnotherCalc.Convertation.isNumber;
+
 public class AnotherCalculator {
-    static String value1;
-    static String value2;
-    static String func;
+
     static String answer;
-
-
     static Convertation conv = new Convertation();
 
 
     public static void main(String[] args) {
         do {
-            System.out.println("Enter the first number");
+            Process.process();
             Scanner sc = new Scanner(System.in);
-            value1 = sc.nextLine();
-            System.out.println("Enter the function (only + - * or /)");
-            func = sc.nextLine();
-            System.out.println("Enter the second number");
-            value2 = sc.nextLine();
-            if ((value2 == "0" && func == "/")) {
-                do {
-                    System.out.println("It's impossible to divide on 0");
-                    System.out.println("Enter the second number");
-                    value2 = sc.nextLine();
-                } while ((value2 == "0"));
+            if (isNumber(Process.value1) == isNumber(Process.value2)) {
+                int digit1 = conv.finalConv(Process.value1);
+                int digit2 = conv.finalConv(Process.value2);
+                System.out.println(Process.value1.toUpperCase() + " " + Process.func + " " + Process.value2.toUpperCase() + " = " + ReturningValue.functionResult(digit1, digit2, Process.func));
+                System.out.println("Want to end calculating?[Y/N]");
+                answer = sc.nextLine().toUpperCase();
+            } else {
+                System.out.println("БАЛЯ ЦИФРЫ ДОЛЖНЫ БЫТЬ ОДНОГО РЕГИСТРА. ДАВАЙ ЗАНОВО");
+                Process.process();
             }
-            int digit1 = conv.finalConv(value1);
-            int digit2 = conv.finalConv(value2);
-            System.out.println(value1 + " " + func + " " + value2 + " = " + ReturningValue.functionResult(digit1, digit2, func));
-            System.out.println("Want to end calculating?[Y/N]");
-            answer = sc.nextLine().toUpperCase();
-        }
-        while (answer.equals("N"));
+        } while (answer.equals("N"));
+
     }
 }
+
+
+
 
