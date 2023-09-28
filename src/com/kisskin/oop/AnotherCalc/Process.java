@@ -20,12 +20,12 @@ public class Process {
         }
         System.out.println("Enter the function (only + - * or /)");
         func = sc.nextLine();
-        if (!(!Objects.equals(func, "+") || func != "-" || func != "*" || !Objects.equals(func, "/"))) {
+        if ((!func.equals("+") || !func.equals("-") || !func.equals("*") || !func.equals("/"))) {
             do {
                 System.out.println("БАЛЯ НЕПРАВИЛЬНАЯ ФУНКЦИЯ");
                 System.out.println("Enter the function (only + - * or /)");
                 func = sc.nextLine();
-            } while ((func == "+" || func == "-" || func == "*" || func == "/"));
+            }while (!(func.equals("+") || func.equals("-") || func.equals("*") || func.equals("/")));
         }
         System.out.println("Enter the second number");
         value2 = sc.nextLine();
