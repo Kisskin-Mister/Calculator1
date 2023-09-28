@@ -1,5 +1,7 @@
 package com.kisskin.oop.AnotherCalc;
 
+import static com.kisskin.oop.AnotherCalc.Convertation.isNumber;
+
 public class Convertation {
     public int arabNumber(String xx) {
         switch (xx) {
@@ -29,7 +31,7 @@ public class Convertation {
     }
 
     public int romeNumber(String yy) {
-        switch (yy) {
+        switch (yy.toUpperCase()) {
             case "I":
                 return 1;
             case "II":
@@ -67,45 +69,26 @@ public class Convertation {
 
     public int finalConv(String x) {
         int result = 0;
-        if(isNumber(x)){
-           result = arabNumber(x);
-        }else{
+        if (isNumber(x)) {
+            result = arabNumber(x);
+        } else {
             result = romeNumber(x);
         }
         return result;
     }
 
-    public int returnConvertedValue(int x, String a, String b){
-        if((isNumber(a) == isNumber(b))){
-            return x;
-        }else if (AnotherCalculator.func == "/" && AnotherCalculator.value2 == "0"){
-            throw new IllegalArgumentException("БАЛЯТЬ НЕ ДЕЛИ НА НОЛЬ");
-        }else{
-            throw new IllegalArgumentException("БАЛЯТЬ НЕПРАВИЛЬНО ВВЕЛ ЧИСЛА(один регистр, от 1 до 10)");
-        }
-
+//    public String returnConvertedValue(String x, String a, String b) {
+//        if ((isNumber(a) == isNumber(b))) {
+//            return x;
+//        } else if (AnotherCalculator.func == "/" && AnotherCalculator.value2 == "0") {
+//            throw new IllegalArgumentException("БАЛЯТЬ НЕ ДЕЛИ НА НОЛЬ");
+//        } else {
+//            throw new IllegalArgumentException("БАЛЯТЬ НЕПРАВИЛЬНО ВВЕЛ ЧИСЛА(один регистр, от 1 до 10)");
+//        }
+//
     }
 
-    public static class rtn {
-        static int functionReturn(int a, int b, String func) {
-            int i = 0;
-            switch (func) {
-                case "/":
-                    return i = a / b;
-                case "*":
-                    return i = a * b;
-                case "-":
-                    return i = a - b;
-                case "+":
-                    return i = a + b;
-            }
-            return i;
 
-
-        }
-
-    }
-}
 
 
 
